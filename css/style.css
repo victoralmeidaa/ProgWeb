@@ -74,3 +74,17 @@ body{
     font-size: 14px;
     margin-top: 10px;
 }
+
+.form p a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #2e86de;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.form p a:hover {
+    color: #1e6bb8;
+    transform: scale(1.05);
+}

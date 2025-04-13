@@ -1,6 +1,7 @@
+<?php session_start(); ?>
 
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,7 @@
 <body>
     <div class="login-container">
         <h2>Login</h2>
-        <form action="processa_login.php" method="POST">
+        <form action="login.php" method="POST" class="form">
             <div class="input-group"> 
                 <label for="email">E-mail:</label>
                 <input type="email" placeholder="Email" name="email" required>
@@ -22,6 +23,11 @@
             </div>
             <br>
             <button type="submit" class="login-btn">Entrar</button>
+
+            
+            <p><a href="registrar.php">Cadastrar-se</a></p>
+            
+
         </form>
     </div>
 </body>
