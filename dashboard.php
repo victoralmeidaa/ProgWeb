@@ -14,7 +14,7 @@ if (!isset($_SESSION['usuario'])) {
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="dashboard">
         <h2>Bem-vindo, <?php echo $_SESSION['usuario']; ?>!</h2>
         <a class="logout" href="logout.php">Sair</a>
     </div>

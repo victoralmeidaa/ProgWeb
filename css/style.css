@@ -88,3 +88,12 @@ body{
     color: #1e6bb8;
     transform: scale(1.05);
 }
+
+.form, .dashboard {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}

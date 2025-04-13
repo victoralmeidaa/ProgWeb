@@ -18,16 +18,13 @@
             </div> 
             <br>
             <div class="input-group">
-                <label for="senha">Senha:</label>
+                <label for="senha">Senha :</label>
                 <input type="password" placeholder="Senha" name="senha"> 
             </div>
             <br>
             <button type="submit" class="login-btn">Entrar</button>
-
-            
             <p><a href="registrar.php">Cadastrar-se</a></p>
-            
-
+           
         </form>
     </div>
 </body>
