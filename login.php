@@ -13,14 +13,16 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){  //VERICIFAR SE O FORM FOI EMVIADO VI
 
     $resultado = $stmt->get_result();   //PEGA OS DADOS RETORNADOS DA CONSULTA DO BANCO
     if ($resultado->num_rows > 0){  //VERIFICA SE O REGISTO DO BANCO FOI ENCONTRADO
-        $_SESSION['usuarios']= $email;  //CRIA A SESSAO COM O EMAIL DO USUARIO 
+        $_SESSION['usuario']= $email;  //CRIA A SESSAO COM O EMAIL DO USUARIO 
         header('Location: dashboard.php');  //REDIRECIONA O USUARIO PARA DASHBOARD.PHP
         exit();
 
     } else {
-        $erro = "Email ou Senha invalida";
+        echo "Email ou Senha invalida";
+        
     }
 }
 ?>
+<a href="index.php"> Voltar </a>
 
 
