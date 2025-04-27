@@ -11,8 +11,5 @@
     if ($link->connect_error) {
         die("Erro na conexão com o banco: " . $conexao->connect_error);
     }
-
-
-   
 ?>
 <a href="login.php"> Voltar </a>
