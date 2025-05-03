@@ -20,3 +20,15 @@ Arquivo de logout (logout.php)
 Arquivo de estilos (style.css)
 
 Arquivo de validação de login(login.php)
+
+SQL BD do Projeto
+
+CREATE DATABASE login_db;
+
+USE login_db;
+
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL
+);
