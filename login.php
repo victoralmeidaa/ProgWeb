@@ -2,9 +2,9 @@
 session_start();
 include("conexao.php");
 
-if($_SERVER["REQUEST_METHOD"] === "POST"){  //VERICIFAR SE O FORM FOI EMVIADO VIA POST
+if($_SERVER["REQUEST_METHOD"] == "POST"){  //VERICIFAR SE O FORM FOI EMVIADO VIA POST
     $email = $_POST['email'];   //RECEBER EMAIL E SENHA ENVIADOS PELO FORM
-    $senha = $_POST['senha'];
+    $senha = md5($_POST['senha']);
 
     $sql = "SELECT * FROM usuarios WHERE email = ? AND senha = ?";  //CONSULTAR O BANCO DE DADOS COM QUERY
     $stmt = $conexao->prepare($sql);    //PREPARA A CONSULTA PARA EVITAR SQL INJECTION
