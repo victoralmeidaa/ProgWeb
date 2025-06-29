@@ -1,15 +1,15 @@
 <?php
-// BANCO
-$host = "ep-patient-bread-ac0do6cf-pooler.sa-east-1.aws.neon.tech";
-$dbname = "neondb";
-$user = "neondb_owner";
-$senha = "npg_cWIOS3jgp4ku"; 
+$host = getenv("DB_HOST");
+$dbname = getenv("DB_NAME");
+$user = getenv("DB_USER");
+$senha = getenv("DB_PASSWORD");
+$endpoint = getenv("DB_ENDPOINT");
 
-try {
-    $pdo = new PDO("pgsql:host=$host;port=5432;dbname=$dbname;sslmode=require", $user, $senha);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    // echo "Conectado com sucesso!";
-} catch (PDOException $e) {
-    die("Erro na conexão: " . $e->getMessage());
+$conn_string = "host=$host port=5432 dbname=$dbname user=$user password=$senha sslmode=require options='--endpoint=$endpoint'";
+$conn = pg_connect($conn_string);
+
+if (!$conn) {
+    echo json_encode(["erro" => "Falha na conexão PostgreSQL"]);
+    exit;
 }
-
+?>
