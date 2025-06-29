@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: projeto-php
+    name: ProgWeb
     env: php
     buildCommand: ""
     startCommand: ""
