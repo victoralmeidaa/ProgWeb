@@ -1,13 +1,15 @@
-<?php 
-    // BANCO
-    $servidor = "localhost";
-    $usuario = "root";
-    $senha = "";
-    $banco = "progweb";
+<?php
+// BANCO
+$host = "ep-patient-bread-ac0do6cf-pooler.sa-east-1.aws.neon.tech";
+$dbname = "neondb";
+$user = "neondb_owner";
+$senha = "npg_cWIOS3jgp4ku"; 
 
-    $conexao = new mysqli($servidor, $usuario, $senha, $banco);
-     
-    if ($conexao->connect_error) {
-        die("Erro na conexão com o banco: " . $conexao->connect_error);
-    }
-?>
+try {
+    $pdo = new PDO("pgsql:host=$host;port=5432;dbname=$dbname;sslmode=require", $user, $senha);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // echo "Conectado com sucesso!";
+} catch (PDOException $e) {
+    die("Erro na conexão: " . $e->getMessage());
+}
+
