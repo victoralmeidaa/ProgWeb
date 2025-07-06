@@ -4,7 +4,8 @@ require 'conexao.php';
 $metodo = $_SERVER['REQUEST_METHOD'];
 
 if ($metodo === 'GET') {
-    // 🔍 Listar todos os usuários
+    // 🔍 Listar todos os usuários // repor 
+    
     $stmt = $pdo->query("SELECT id, email FROM usuarios ORDER BY id ASC");
     $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
     echo json_encode($usuarios);
