@@ -1,15 +1,16 @@
 <?php
-$host = getenv("DB_HOST");
-$dbname = getenv("DB_NAME");
-$user = getenv("DB_USER");
-$senha = getenv("DB_PASSWORD");
-$endpoint = getenv("DB_ENDPOINT");
+$servername = "localhost";
+$username = "root";
+$password = ""; // por padrão no XAMPP o root não tem senha
+$dbname = "progweb"; // troque pelo nome do seu banco
 
-$conn_string = "host=$host port=5432 dbname=$dbname user=$user password=$senha sslmode=require options='--endpoint=$endpoint'";
-$conn = pg_connect($conn_string);
+// Criar conexão
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-if (!$conn) {
-    echo json_encode(["erro" => "Falha na conexão PostgreSQL"]);
-    exit;
+// Checar conexão
+if ($conn->connect_error) {
+    die("Falha na conexão: " . $conn->connect_error);
 }
+
+echo "Conexão bem sucedida!";
 ?>
