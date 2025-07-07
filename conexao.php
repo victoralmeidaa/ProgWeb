@@ -1,16 +1,12 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = ""; // por padrão no XAMPP o root não tem senha
-$dbname = "progweb"; // troque pelo nome do seu banco
+$host = "localhost";
+$usuario = "root";
+$senha = "";
+$banco = "progweb"; // nome correto do seu banco de dados no phpMyAdmin
 
-// Criar conexão
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conexao = new mysqli($host, $usuario, $senha, $banco);
 
-// Checar conexão
-if ($conn->connect_error) {
-    die("Falha na conexão: " . $conn->connect_error);
+if ($conexao->connect_error) {
+    die("Erro na conexão: " . $conexao->connect_error);
 }
-
-echo "Conexão bem sucedida!";
 ?>
