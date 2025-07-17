@@ -5,7 +5,7 @@ $mensagem = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
-    $senha = md5($_POST["senha"]);
+    $senha = password_hash($_POST["senha"], PASSWORD_DEFAULT);
 
     // Verifica se o e-mail já existe
     $sql = "SELECT id FROM usuarios WHERE email = ?";
